@@ -1,7 +1,6 @@
-# Next.js + Contentlayer
+# Portfolio
 
-A template with Next.js 13 app dir, Contentlayer, Tailwind CSS and dark mode.
+* It's personal portfolio website.
 
-https://next-contentlayer.vercel.app
-
+[![text](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abhibongale)
 
