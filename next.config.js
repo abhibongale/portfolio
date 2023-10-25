@@ -6,6 +6,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   basePath: '/portfolio/',
+  assetPrefix: "./",
 };
 
 module.exports = withContentlayer(nextConfig);
