@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { LayoutGroup, motion } from 'framer-motion';
 
 const navItems = {
-  '/': {
+  '/home': {
     name: 'home',
   },
   '/blog': {
