@@ -5,8 +5,7 @@ const nextConfig = {
   output: 'export',
   reactStrictMode: true,
   swcMinify: true,
-  basePath: 'portfolio',
-  assetPrefix: "/",
+  assetPrefix: "/portfolio",
 };
 
 module.exports = withContentlayer(nextConfig);
