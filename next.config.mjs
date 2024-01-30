@@ -7,8 +7,8 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx'],
   reactStrictMode: true,
   experimental: {
-    scrollRestoration: true,
-    webpackBuildWorker: true,
+    //scrollRestoration: true,
+    //webpackBuildWorker: true,
   },
 }
 
