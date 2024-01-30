@@ -10,9 +10,7 @@ const nextConfig = {
     //scrollRestoration: true,
     //webpackBuildWorker: true,
   },
-  images: {
-    unoptimized: true
-  }
+  
 }
 
 const withMDX = nextMDX({
