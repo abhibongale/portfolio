@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Spencer Sharp</title>
+        <link>undefined</link>
+        <description>Your blog description</description>
+        <lastBuildDate>Tue, 30 Jan 2024 15:08:47 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>Spencer Sharp</title>
+            <url>undefined/favicon.ico</url>
+            <link>undefined</link>
+        </image>
+        <copyright>All rights reserved 2024</copyright>
+        <item>
+            <title><![CDATA[Clean Code: meaningful names summary]]></title>
+            <link>undefined/articles/meaningful-names</link>
+            <guid>undefined/articles/meaningful-names</guid>
+            <pubDate>Tue, 30 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Meaningful names summary]]></description>
+            <content:encoded><![CDATA[<p>&quot;Clean Code&quot; by Robert C. Martin is a groundbreaking book that provides developers with valuable insights and principles for writing high-quality, maintainable code. Chapter 2, titled &quot;Meaningful Names,&quot; delves into the importance of choosing names that convey the purpose and functionality of variables, functions, and classes. In this extensive exploration of the chapter, we will examine key principles, guidelines, and examples to illustrate the significance of meaningful names in the pursuit of writing clean and understandable code.</p>
+<h2>The Essence of Meaningful Names</h2>
+<p>Meaningful names are the bedrock of clean code, serving as a communication tool between the code&#x27;s author and its readers, including the author&#x27;s future self. The primary goal is to create code that is self-explanatory, reducing the cognitive load on developers and making maintenance and collaboration more manageable.</p>
+<h3>Names Should Reveal Intent</h3>
+<p>The first principle emphasized in the chapter is that names should reveal intent. A well-chosen name should not just be a label; it should provide insight into the purpose or functionality it represents. Consider the following example in Python:</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Unclear variable name</span>
+d <span class="token operator">=</span> <span class="token number">5</span>
+</code></pre>
+<p>The variable name &#x27;d&#x27; gives no indication of its purpose or significance in the code. Contrast this with a more meaningful name:</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Clear and descriptive variable name</span>
+days_since_creation <span class="token operator">=</span> <span class="token number">5</span>
+</code></pre>
+<p>By choosing a descriptive name like <code>days_since_creation</code>, the code becomes more self-explanatory, reducing the need for additional comments or mental effort to understand its purpose.</p>
+<h3>Avoid Misleading Names</h3>
+<p>Another crucial principle is to avoid misleading names. A name should not imply something that the variable or function does not deliver. For instance:</p>
+<pre class="language-java"><code class="language-java"><span class="token comment">// Misleading variable name</span>
+<span class="token keyword">int</span> accounts <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The variable name &#x27;accounts&#x27; implies the count of accounts, but it actually represents the account status. A more accurate name might be:</p>
+<pre class="language-java"><code class="language-java"><span class="token comment">// Accurate variable name</span>
+<span class="token keyword">int</span> accountStatus <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+</code></pre>
+<p>By choosing a name that accurately reflects the variable&#x27;s purpose, developers can prevent confusion and misinterpretation.</p>
+<h3>Avoid Disinformation</h3>
+<p>Code evolves over time, and names should evolve with it. Using names based on historical context or outdated information can lead to disinformation. Consider the following example in JavaScript:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Outdated name based on a previous implementation</span>
+<span class="token keyword">let</span> userCount <span class="token operator">=</span> <span class="token function">getUsers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">;</span>
+</code></pre>
+<p>A more accurate name reflecting the current implementation might be:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="token comment">// Accurate variable name based on the current implementation</span>
+<span class="token keyword">let</span> activeUserCount <span class="token operator">=</span> <span class="token function">getActiveUsers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">length</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Ensuring that names are up-to-date and reflective of the code&#x27;s current functionality is crucial for maintaining clarity and reducing the likelihood of misunderstandings.</p>
+<h2>Practical Examples</h2>
+<p>Let&#x27;s explore additional examples to reinforce the principles outlined in &quot;Clean Code.&quot;</p>
+<h3>Class Names</h3>
+<p>Meaningful names are particularly crucial when naming classes, as they represent higher-level abstractions. Consider the following example in Java:</p>
+<pre class="language-java"><code class="language-java"><span class="token comment">// Unclear class name</span>
+<span class="token keyword">class</span> <span class="token class-name">Data</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// Clear and descriptive class name</span>
+<span class="token keyword">class</span> <span class="token class-name">UserData</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre>
+<p>By choosing a descriptive class name like <code>UserData</code>, developers immediately grasp the purpose of the class, leading to a more intuitive and readable codebase.</p>
+<h3>Method Names</h3>
+<p>The importance of meaningful names extends to method names. Consider the following example in Python:</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Unclear method name</span>
+<span class="token keyword">def</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+<span class="token comment"># Clear and descriptive method name</span>
+<span class="token keyword">def</span> <span class="token function">calculate_total_price</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+</code></pre>
+<p>The first example with the method name <code>calculate</code> provides no insight into what the method is calculating. In contrast, the second example with the method name <code>calculate_total_price</code> clearly communicates the method&#x27;s purpose.</p>
+<h3>Enumerations</h3>
+<p>When working with enumerations, choosing clear and descriptive names enhances code readability. Consider the following example in C#:</p>
+<pre class="language-csharp"><code class="language-csharp"><span class="token comment">// Unclear enumeration name</span>
+<span class="token keyword">enum</span> <span class="token class-name">Status</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+<span class="token comment">// Clear and descriptive enumeration name</span>
+<span class="token keyword">enum</span> <span class="token class-name">UserStatus</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+</code></pre>
+<p>The second example using <code>UserStatus</code> is more informative, making it evident that the enumeration represents various states related to user status.</p>
+<h2>Conclusion</h2>
+<ul>
+<li>In conclusion, Chapter 2 of &quot;Clean Code&quot; serves as a comprehensive guide to the art of choosing meaningful names in programming.</li>
+<li>By adhering to the principles of revealing intent, avoiding misleading names, and eliminating disinformation, developers can contribute to codebases that are not only functional but also highly maintainable and comprehensible. Through numerous practical examples, the chapter underscores the transformative power of well-chosen names in creating clean, elegant, and readable code, ultimately enhancing the quality of software development practices.</li>
+<li>As developers apply these principles, they embark on a journey toward creating code that stands the test of time and fosters collaborative and efficient software development processes.</li>
+</ul>]]></content:encoded>
+            <author>spencer@planetaria.tech (Spencer Sharp)</author>
+        </item>
+        <item>
+            <title><![CDATA[Start Over - A New Beginning]]></title>
+            <link>undefined/articles/start-over</link>
+            <guid>undefined/articles/start-over</guid>
+            <pubDate>Sat, 24 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Ongoing]]></description>
+            <author>spencer@planetaria.tech (Spencer Sharp)</author>
+        </item>
+        <item>
+            <title><![CDATA[My Life as a Community / Company Volunteer]]></title>
+            <link>undefined/articles/vinzvinci-life</link>
+            <guid>undefined/articles/vinzvinci-life</guid>
+            <pubDate>Fri, 23 Dec 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Ongoing]]></description>
+            <author>spencer@planetaria.tech (Spencer Sharp)</author>
+        </item>
+        <item>
+            <title><![CDATA[Helping you to build your Personal Branding]]></title>
+            <link>undefined/articles/personal-branding</link>
+            <guid>undefined/articles/personal-branding</guid>
+            <pubDate>Tue, 14 Sep 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Your personal branding is concrete proof to showcase your interest and expertise. Join me as I am sharing my experience on how I built my Personal Branding in Tech.]]></description>
+            <content:encoded><![CDATA[<img alt="" srcSet="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpersonal-branding-image.0a606b6e.webp&amp;w=1080&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpersonal-branding-image.0a606b6e.webp&amp;w=2048&amp;q=75 2x" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpersonal-branding-image.0a606b6e.webp&amp;w=2048&amp;q=75" width="1000" height="420" decoding="async" data-nimg="1" loading="lazy" style="color:transparent"/>
+<p>My room is just less average than the rest, I don&#x27;t have a cool background or dazzling furniture for you to see behind me as other people have, lols, but the SWAG helps brighten and fill the gaps in my empty room. In the same way this is how my personal brand helped me to get a job and still receive job offers from other companies.</p>
+<p>P.S
+I&#x27;m still going to improve and customize my place soon and put the SWAG in the right place.</p>
+<p>Before we start, I want to introduce myself :)</p>
+<h3>About me</h3>
+<p>I&#x27;m Vincent Villafuerte also known as vinzvinci. I&#x27;m currently in my 3rd-year of college and taking a Bachelor of Science in Information Systems. I&#x27;m passionate about community development and content writing. I created my GitHub account on October 19, 2020, because of Hacktoberfest.</p>
+<h4>Current roles:</h4>
+<ul>
+<li>Microsoft Learn Student Ambassador (Batch - January 2021)</li>
+<li>1st GitHub Campus Expert in the Philippines (Batch - February 2021)</li>
+<li>Developer Relations Intern at <a href="http://devprotocol.xyz/">Dev Protocol</a> (Started - June 2021)</li>
+<li>I founded <a href="https://github.com/SurPathHub/">SurPath Hub</a> &amp; <a href="https://github.com/WebXDAO">WebX DAO</a> - Open Source Community</li>
+</ul>
+<p>If you&#x27;re asking how did I get those roles so fast, I also don&#x27;t know why :smile:, but maybe the tips I give below helped me on my journey in tech :rocket:</p>
+<h3>Get started</h3>
+<p>My personal branding helped me achieve my goals. I want to share with y&#x27;all the tips that helped me.</p>
+<p>Personal branding isn&#x27;t just for someone who owns a business and who puts their product on the market. It can also be for you; you may want to be known as an aspiring blockchain developer or an aspiring software engineer, or a student developer who likes to lead their peers. It&#x27;s how you promote yourself in different social media and this may be the reason that you get hired, because of your personal branding.</p>
+<p>Your personal branding is concrete proof to showcase your interest and expertise. It is how you demonstrate to your employer that you are valuable and make them feel that you are the one who they&#x27;re looking for. Some folks don&#x27;t really realize how important their personal brand is and this is one of the reasons why it is hard for them to get a job even they have great skills.</p>
+<p>Don&#x27;t worry if you are new, it is not too late to get started because</p>
+<h3>I am giving you 8 tips to build your personal brand and make friends in the tech industry</h3>
+<h4>1. Use your real name, same username, and same profile picture to all of your social media</h4>
+<blockquote>
+<p>You don&#x27;t need to use all of the social media you have, but you can use your <a href="https://www.linkedin.com/in/vinzvinci/">LinkedIn</a>, <a href="https://twitter.com/vinzvinci">Twitter</a> and your <a href="https://github.com/vinzvinci">GitHub profile</a> only like I did.</p>
+</blockquote>
+<h4>2. Build your own unique GitHub profile</h4>
+<blockquote>
+<p>Introduce yourself, showcase your interests, what fields are you passionate about, and let your personal project speak for your skills.</p>
+</blockquote>
+<blockquote>
+<p>If you need help, you can visit this <a href="https://github.com/SurPathHub/github-profile-ph#github-profiles">repository</a> to get some ideas.</p>
+</blockquote>
+<h4>3. Contribute to open source</h4>
+<blockquote>
+<p>Well, you don&#x27;t need to make a lot of projects but contributing to open source is also one of the best ways to make your GitHub profile look more interesting.</p>
+</blockquote>
+<h4>4. Join Open Source Community</h4>
+<blockquote>
+<p>If you want a friend to guide you on your open source journey, you can join an open source community like <a href="eddiehub.org">EddieHub</a> or a hackathon community like <a href="https://mlh.io/">MLH</a>. These communities will help you to accelerate your learning. There&#x27;s a lot of communities out there, you can search or find them on Twitter.</p>
+</blockquote>
+<blockquote>
+<p>EddieHub Community is where I started and the community has done so many things for my life.</p>
+</blockquote>
+<blockquote>
+<p>Once you join to the community, one thing to keep in mind is to follow community rules.</p>
+</blockquote>
+<h4>5. Collaboration</h4>
+<blockquote>
+<p>At <a href="https://www.eddiehub.org/">EddieHub Community</a>, we believe <strong>collaboration</strong> first, <strong>code</strong> second. This is very accurate, because if you don&#x27;t have collaboration skills then it will be hard for your teammate to collaborate with you and know you as well. So try to overcome your shyness, don&#x27;t worry everyone is friendly. If you are worried about failing, it is okay because it is part of your journey.</p>
+</blockquote>
+<h4>6. Join Hackathon</h4>
+<blockquote>
+<p>Here you will meet a lot of great folks. Joining a hackathon is also one of the best ways to accelerate your learning, make connections, and collaborating with other people. Don&#x27;t waste the opportunity to introduce yourself there because you can&#x27;t expect the opportunity.</p>
+</blockquote>
+<h4>7. Create your own Portfolio</h4>
+<blockquote>
+<p>Here you can also showcase everything you love. If you lack the experience to code your portfolio, you can learn first and do it next time. Let your GitHub profile showcase your interest and the work you do while you don&#x27;t have a portfolio. Some employers are looking at the GitHub profile :wink:</p>
+</blockquote>
+<h4>8. Build your resume</h4>
+<blockquote>
+<p>Of course, if you are applying for a job, you need a resume, so better to give your best shot at writing this. If you want people to review your resume, you can make an issue on the <a href="https://github.com/EddieHubCommunity/support/issues">EddieHub support repository</a> or if you just want to have an insight from them, you can read their feedback <a href="https://github.com/EddieHubCommunity/support/issues?q=is%3Aissue+is%3Aclosed+resume+label%3A%22live+stream+review%22">here</a>.</p>
+</blockquote>
+<p>Personal branding will help you stand out from the crowd and get your dream job at an early age.</p>
+<p>I hope this will help you achieve your goal. Never stop dreaming, never stop learning, never stop the collaboration, and soon you will achieve your dream job. Good luck with your career and take care of your health!</p>
+<p>Main article at <a href="https://dev.to/vinzvinci/helping-you-to-build-your-personal-brand-in-tech-35df">dev.to</a></p>]]></content:encoded>
+            <author>spencer@planetaria.tech (Spencer Sharp)</author>
+        </item>
+    </channel>
+</rss>
