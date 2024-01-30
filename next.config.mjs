@@ -6,6 +6,8 @@ import rehypePrism from '@mapbox/rehype-prism'
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx'],
   reactStrictMode: true,
+  basePath: '/portfolio', // Replace with your repository name
+  assetPrefix: '/portfolio/',
   experimental: {
     //scrollRestoration: true,
     //webpackBuildWorker: true,
