@@ -143,7 +143,9 @@ Consider a web application deployed across multiple regions with a primary serve
 In summary, the purpose of health checks in Route 53 is to ensure the continuous availability and health of endpoints associated with DNS records. By monitoring and responding to the health status of these endpoints, Route 53 helps maintain the reliability and resilience of applications and services by intelligently directing traffic to healthy resources.
 
 2. **Explain the difference between a CNAME record and an Alias record in Route 53.**
-Both CNAME (Canonical Name) records and Alias records in Route 53 serve similar purposes—they are used to map a domain or subdomain to another domain or endpoint. However, there are key differences between the two, especially in terms of functionality and the types of resources they can point to.
+
+Both CNAME (Canonical Name) records and Alias records in Route 53 serve similar purposes—they are used to map a domain or subdomain to another domain or endpoint. 
+However, there are key differences between the two, especially in terms of functionality and the types of resources they can point to.
 
 ### CNAME Record:
 
@@ -205,7 +207,9 @@ Both CNAME (Canonical Name) records and Alias records in Route 53 serve similar 
 In summary, while both CNAME and Alias records provide aliasing functionality, Alias records in Route 53 are a specialized solution tailored for seamless integration with AWS resources, offering improved performance and flexibility, especially for the apex domain. CNAME records are more general-purpose and used in scenarios outside of AWS or when creating aliases for subdomains.
 
 3. **Describe the steps involved in the DNS resolution process when a user types a domain name in a web browser.**
-The Domain Name System (DNS) resolution process is a series of steps that occur when a user types a domain name into a web browser. The goal of DNS resolution is to translate the human-readable domain name into the corresponding IP address, allowing the browser to locate the web server hosting the requested content. The process involves multiple components, including DNS resolvers, authoritative name servers, and caching. Here are the steps involved in the DNS resolution process:
+
+The Domain Name System (DNS) resolution process is a series of steps that occur when a user types a domain name into a web browser. 
+The goal of DNS resolution is to translate the human-readable domain name into the corresponding IP address, allowing the browser to locate the web server hosting the requested content. The process involves multiple components, including DNS resolvers, authoritative name servers, and caching. Here are the steps involved in the DNS resolution process:
 
 ### 1. **User Input:**
    - A user enters a domain name (e.g., www.example.com) into the web browser's address bar.
@@ -247,7 +251,9 @@ The Domain Name System (DNS) resolution process is a series of steps that occur 
 The DNS resolution process involves a hierarchical and distributed system of servers working collaboratively to translate domain names into IP addresses. Caching at various levels helps improve efficiency and reduce the load on DNS servers. This process ensures that users can access websites using human-readable domain names, abstracting the complexity of IP addresses.
 
 4. **How does weighted routing work in Route 53, and in what scenarios might it be useful?**
-Weighted Routing in Amazon Route 53 is a routing policy that allows you to distribute traffic among multiple resources based on the assigned weights. The weights are assigned as percentages, determining the proportion of incoming traffic that each resource receives. This routing policy is particularly useful in scenarios where you want to control the distribution of traffic among different resources based on their capacities, capabilities, or for testing purposes.
+
+Weighted Routing in Amazon Route 53 is a routing policy that allows you to distribute traffic among multiple resources based on the assigned weights. 
+The weights are assigned as percentages, determining the proportion of incoming traffic that each resource receives. This routing policy is particularly useful in scenarios where you want to control the distribution of traffic among different resources based on their capacities, capabilities, or for testing purposes.
 
 ### How Weighted Routing Works:
 
