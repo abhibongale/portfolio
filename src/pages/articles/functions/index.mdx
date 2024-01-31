@@ -12,95 +12,178 @@ export const meta = {
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
 
-**Clean Code Chapter 3: Functions**
+Chapter 3 of "Clean Code" by Robert C. Martin focuses on functions and provides valuable insights into writing clean, maintainable, and efficient code. Let's delve into the key concepts discussed in this chapter along with examples.
 
-In Chapter 3 of "Clean Code" by Robert C. Martin, the focus is on functions and their role in writing maintainable and readable code. Martin emphasizes the importance of writing small, focused, and well-named functions to enhance code clarity and readability.
+### 1. **Small!**
+One of the fundamental principles emphasized in Chapter 3 is the importance of keeping functions small. Martin suggests that functions should ideally be no more than 20 lines long. Small functions are easier to understand, test, and maintain.
 
-### Key Concepts:
-
-#### 1. Small Functions:
-   - Functions should be small and focus on doing one thing well.
-   - A function's length should ideally be limited to a few lines, promoting simplicity and ease of understanding.
-   - Small functions make it easier to comprehend the entire codebase.
-
-#### 2. Do One Thing:
-   - Functions should have a single responsibility, and they should do it well.
-   - Avoid functions that perform multiple tasks, as they become harder to understand and maintain.
-
-#### 3. Descriptive Naming:
-   - Choose meaningful names for functions that convey their purpose.
-   - A well-named function eliminates the need for comments by providing clarity in the code itself.
-
-#### 4. Function Arguments:
-   - Limit the number of arguments a function takes, as excessive parameters can complicate understanding.
-   - Aim for a balance between too many arguments and breaking the function into smaller, more focused functions.
-
-#### 5. Side Effects:
-   - Minimize or eliminate side effects within functions.
-   - A function should ideally perform its task without modifying external states or variables.
-
-#### 6. Error Handling:
-   - Use exceptions for error handling rather than returning error codes.
-   - This approach separates error-handling code from the main logic, improving readability.
-
-#### 7. DRY (Don't Repeat Yourself) Principle:
-   - Avoid duplicating code by creating small, reusable functions.
-   - Encapsulate common functionality to promote maintainability.
-
-### Examples:
-
-#### Example 1: Small Functions
+**Example:**
 ```python
 # Bad Example
-def process_data(data):
-    # ... 50 lines of code ...
+def complex_calculation(data):
+    # ... 30 lines of code ...
+    result = perform_complex_operation(data)
+    # ... 20 lines of code ...
+    return result
 
 # Good Example
-def extract_data(data):
-    # ... 10 lines of code ...
-
-def process_data(data):
-    # ... 10 lines of code ...
-
-def display_result(result):
-    # ... 10 lines of code ...
+def simple_calculation(data):
+    result = perform_simple_operation(data)
+    return result
 ```
 
-#### Example 2: Descriptive Naming
+### 2. **Do One Thing**
+Functions should have a single responsibility, meaning they should do one thing and do it well. This principle aligns with the concept of high cohesion, where the internal components of a function should be closely related.
+
+**Example:**
+```python
+# Bad Example
+def process_data_and_send_email(data):
+    # ... processing data ...
+    # ... sending email ...
+    pass
+
+# Good Example
+def process_data(data):
+    # ... processing data ...
+    pass
+
+def send_email(data):
+    # ... sending email ...
+    pass
+```
+
+### 3. **Use Descriptive Names**
+Choosing meaningful names for functions and variables is crucial. A descriptive name should reveal the purpose of the function without the need for additional comments.
+
+**Example:**
 ```python
 # Bad Example
 def xyz(a, b, c):
-    # ... code ...
+    # ... logic ...
 
 # Good Example
-def calculate_triangle_area(base, height):
-    # ... code ...
+def calculate_triangle_area(base, height, hypotenuse):
+    # ... logic ...
 ```
 
-#### Example 3: Limiting Function Arguments
+### 4. **Function Arguments**
+Minimize the number of function arguments. Functions with a large number of parameters can be challenging to understand and use.
+
+**Example:**
 ```python
 # Bad Example
-def complex_function(a, b, c, d, e, f):
-    # ... code ...
+def process_data(a, b, c, d, e):
+    # ... logic ...
 
 # Good Example
-def simpler_function(x, y):
-    # ... code ...
+def process_data(data):
+    # ... logic ...
 ```
 
-#### Example 4: Error Handling
+### 5. **Avoid Side Effects**
+Functions should not have hidden side effects. Modifying global variables or external state within a function can lead to unexpected behavior.
+
+**Example:**
 ```python
 # Bad Example
-def divide(a, b):
-    if b == 0:
+total = 0
+def add_to_total(value):
+    global total
+    total += value
+
+# Good Example
+def calculate_total(values):
+    return sum(values)
+```
+
+### 6. **Command-Query Separation**
+Functions should either perform an action or return a value, but not both. This separation makes code clearer and more maintainable.
+
+**Example:**
+```python
+# Bad Example
+def update_and_get_value(data):
+    # ... update data ...
+    return updated_data
+
+# Good Example
+def update_data(data):
+    # ... update data ...
+
+def get_value(data):
+    # ... get value ...
+```
+
+### 7. **Error Handling in Clean Code Functions:**
+
+In Clean Code, effective error handling is crucial for maintaining code clarity and preventing unexpected issues. Robert C. Martin advocates for using exceptions rather than error codes and ensuring that error-handling code is separate from the main logic of a function.
+
+#### Example:
+
+```python
+# Bad Example
+def read_file(file_path):
+    try:
+        file = open(file_path, 'r')
+        content = file.read()
+        file.close()
+        return content
+    except Exception as e:
+        print(f"Error reading file: {e}")
         return None
-    return a / b
 
 # Good Example
-def divide(a, b):
-    if b == 0:
-        raise ValueError("Cannot divide by zero")
-    return a / b
+def read_file(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            content = file.read()
+        return content
+    except FileNotFoundError as e:
+        print(f"File not found: {e}")
+        raise
+    except Exception as e:
+        print(f"Error reading file: {e}")
+        raise
 ```
 
-In summary, adhering to the principles outlined in Clean Code Chapter 3 results in functions that are easier to understand, maintain, and modify. Small, focused functions with descriptive names contribute to a more readable and scalable codebase.
+In the good example, we've separated the error-handling concerns from the main logic. We catch specific exceptions like `FileNotFoundError` and handle them appropriately, printing a helpful message and re-raising the exception. For other unexpected exceptions, we print a generic error message.
+
+### 8. **DRY (Don't Repeat Yourself) Principle in Clean Code Functions:**
+
+The DRY principle emphasizes the importance of avoiding code duplication. Functions should be designed to encapsulate common functionalities, ensuring that if a change is required, it only needs to be made in one place.
+
+#### Example:
+
+```python
+# Bad Example
+def calculate_area_of_square(side_length):
+    area = side_length * side_length
+    print(f"The area of the square is: {area}")
+
+def calculate_area_of_circle(radius):
+    area = 3.14 * radius * radius
+    print(f"The area of the circle is: {area}")
+
+# Good Example
+def calculate_area(shape, dimension):
+    if shape == 'square':
+        area = dimension * dimension
+    elif shape == 'circle':
+        area = 3.14 * dimension * dimension
+    else:
+        raise ValueError(f"Unsupported shape: {shape}")
+
+    print(f"The area of the {shape} is: {area}")
+
+# Usage
+calculate_area('square', 5)
+calculate_area('circle', 3)
+```
+
+In the good example, we have a single function, `calculate_area`, that takes the shape and dimension as parameters. This eliminates the need for duplicating the area calculation logic for different shapes. If a new shape needs to be added or if the calculation formula changes, it only needs to be updated in one place.
+
+Adhering to the DRY principle not only reduces redundancy but also makes the code more maintainable and less prone to errors.
+
+
+By following these principles outlined in Chapter 3 of "Clean Code," developers can produce functions that are easier to read, understand, and maintain. Adopting these practices contributes to the creation of a clean, efficient, and sustainable codebase.
