@@ -1,0 +1,106 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+//import personalphoto from './personal-branding-image.webp'
+
+export const meta = {
+  author: 'Abhishek Bongale',
+  date: '2024-01-31',
+  title: 'Clean Code: Functions Notes',
+  description:
+    'Summaries the Key concept about the function from the Clean Code',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+**Clean Code Chapter 3: Functions**
+
+In Chapter 3 of "Clean Code" by Robert C. Martin, the focus is on functions and their role in writing maintainable and readable code. Martin emphasizes the importance of writing small, focused, and well-named functions to enhance code clarity and readability.
+
+### Key Concepts:
+
+#### 1. Small Functions:
+   - Functions should be small and focus on doing one thing well.
+   - A function's length should ideally be limited to a few lines, promoting simplicity and ease of understanding.
+   - Small functions make it easier to comprehend the entire codebase.
+
+#### 2. Do One Thing:
+   - Functions should have a single responsibility, and they should do it well.
+   - Avoid functions that perform multiple tasks, as they become harder to understand and maintain.
+
+#### 3. Descriptive Naming:
+   - Choose meaningful names for functions that convey their purpose.
+   - A well-named function eliminates the need for comments by providing clarity in the code itself.
+
+#### 4. Function Arguments:
+   - Limit the number of arguments a function takes, as excessive parameters can complicate understanding.
+   - Aim for a balance between too many arguments and breaking the function into smaller, more focused functions.
+
+#### 5. Side Effects:
+   - Minimize or eliminate side effects within functions.
+   - A function should ideally perform its task without modifying external states or variables.
+
+#### 6. Error Handling:
+   - Use exceptions for error handling rather than returning error codes.
+   - This approach separates error-handling code from the main logic, improving readability.
+
+#### 7. DRY (Don't Repeat Yourself) Principle:
+   - Avoid duplicating code by creating small, reusable functions.
+   - Encapsulate common functionality to promote maintainability.
+
+### Examples:
+
+#### Example 1: Small Functions
+```python
+# Bad Example
+def process_data(data):
+    # ... 50 lines of code ...
+
+# Good Example
+def extract_data(data):
+    # ... 10 lines of code ...
+
+def process_data(data):
+    # ... 10 lines of code ...
+
+def display_result(result):
+    # ... 10 lines of code ...
+```
+
+#### Example 2: Descriptive Naming
+```python
+# Bad Example
+def xyz(a, b, c):
+    # ... code ...
+
+# Good Example
+def calculate_triangle_area(base, height):
+    # ... code ...
+```
+
+#### Example 3: Limiting Function Arguments
+```python
+# Bad Example
+def complex_function(a, b, c, d, e, f):
+    # ... code ...
+
+# Good Example
+def simpler_function(x, y):
+    # ... code ...
+```
+
+#### Example 4: Error Handling
+```python
+# Bad Example
+def divide(a, b):
+    if b == 0:
+        return None
+    return a / b
+
+# Good Example
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
+```
+
+In summary, adhering to the principles outlined in Clean Code Chapter 3 results in functions that are easier to understand, maintain, and modify. Small, focused functions with descriptive names contribute to a more readable and scalable codebase.
