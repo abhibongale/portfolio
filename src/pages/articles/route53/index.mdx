@@ -12,7 +12,6 @@ export const meta = {
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
 
-**Summary of AWS Route 53:**
 
 ### **1. Introduction to Route 53:**
 
@@ -203,6 +202,7 @@ Both CNAME (Canonical Name) records and Alias records in Route 53 serve similar 
 ### Summary:
 
 In summary, while both CNAME and Alias records provide aliasing functionality, Alias records in Route 53 are a specialized solution tailored for seamless integration with AWS resources, offering improved performance and flexibility, especially for the apex domain. CNAME records are more general-purpose and used in scenarios outside of AWS or when creating aliases for subdomains.
+
 3. **Describe the steps involved in the DNS resolution process when a user types a domain name in a web browser.**
 The Domain Name System (DNS) resolution process is a series of steps that occur when a user types a domain name into a web browser. The goal of DNS resolution is to translate the human-readable domain name into the corresponding IP address, allowing the browser to locate the web server hosting the requested content. The process involves multiple components, including DNS resolvers, authoritative name servers, and caching. Here are the steps involved in the DNS resolution process:
 
