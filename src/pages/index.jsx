@@ -152,11 +152,11 @@ function Resume() {
       // },
     },
     {
-      company: 'Freelancer',
+      company: 'iDeator',
       title: 'Software Developer',
       logo: logoDevProtocol,
-      start: 'Sep 2020',
-      end: 'Aug 2021',
+      start: 'March 2020',
+      end: 'June 2021',
     },
   ]
 
