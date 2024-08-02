@@ -152,11 +152,11 @@ function Resume() {
       // },
     },
     {
-      company: 'iDeator',
+      company: 'Upwork Contract',
       title: 'Software Developer',
       logo: logoDevProtocol,
       start: 'March 2020',
-      end: 'June 2021',
+      end: 'August 2021',
     },
   ]
 
