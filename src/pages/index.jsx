@@ -153,7 +153,7 @@ function Resume() {
     },
     {
       company: 'Upwork Contract',
-      title: 'Software Developer',
+      title: 'Freelancer Software Developer',
       logo: logoDevProtocol,
       start: 'March 2020',
       end: 'August 2021',
