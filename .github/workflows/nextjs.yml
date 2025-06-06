@@ -43,6 +43,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Generate sitemap.xml
+        run: |
+          # Generate the sitemap using a Node.js script or tool
+          # Example: create sitemap using 'next-sitemap' or custom script
+          node scripts/generate-sitemap.js
+        working-directory: ./ # Ensure you're running from the correct folder if needed
+
       - name: Setup Pages
         id: setup_pages
         uses: actions/configure-pages@v5
