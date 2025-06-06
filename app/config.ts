@@ -1,5 +1,5 @@
 export const metaData = {
-  baseUrl: "https://nextfolio-template.vercel.app/",
+  baseUrl: "https://abhibongale.github.io/portfolio/",
   title: "Abhishek Bongale",
   name: "abhibongale",
   ogImage: "/opengraph-image.png",
